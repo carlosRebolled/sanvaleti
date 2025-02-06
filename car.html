@@ -1,1 +1,80 @@
-<h1>hoal xn</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+¿Ser mi San Valentín?</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            margin-top: 50px;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        img {
+            width: 150px;
+        }
+        #question {
+            font-size: 24px;
+            margin: 20px 0;
+        }
+        .buttons {
+            display: flex;
+            gap: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        #yes {
+            background-color: green;
+            color: white;
+            font-size: 18px;
+        }
+        #no {
+            background-color: red;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://m.media-amazon.com/images/I/61fwcBkXVOL._SY450_.jpg" alt="Cute Bear">
+        <p id="question">
+¿Ser mi San Valentín?</p>
+        <div class="buttons">
+            <button id="yes" onclick="sayYes()">Yes</button>
+            <button id="no" onclick="makeYesBigger()">No</button>
+        </div>
+    </div>
+    <script>
+        let yesButton = document.getElementById("yes");
+        let noButton = document.getElementById("no");
+        let question = document.getElementById("question");
+        let yesSize = 18;
+        
+        function makeYesBigger() {
+            yesSize += 50;
+            yesButton.style.fontSize = yesSize + "px";
+        }
+        
+        function sayYes() {
+            document.body.innerHTML = `
+                <div style="text-align: center;">
+                    <img src="https://m.media-amazon.com/images/I/61fwcBkXVOL._SY450_.jpg" alt="Cute Bear">
+                    <h1>Yay! I love you! 💖</h1>
+                </div>
+            `;
+        }
+    </script>
+</body>
+</html>
